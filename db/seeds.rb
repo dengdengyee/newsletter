@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+EmailTemplate.create(
+  template_name: "Basic Template 01",
+  title: "Hey {{ subscriber_name }}, check out what's new!",
+  body: """Hi there, {{ subscriber_name }}.
+
+{{ email_body }}
+
+Best regards"""
+)
