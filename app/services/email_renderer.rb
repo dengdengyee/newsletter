@@ -1,17 +1,20 @@
-# there's only two template variables: subscriber name and email body.
+# there's only two email_template variables: subscriber name and email body.
 
 class EmailRenderer
-  def initialize(template, template_variables)
-    @template = template
-    @template_variables = template_variables
+  def initialize(email_template, subscriber_name, email_body)
+    @email_template = email_template
+    @subscriber_name = subscriber_name
+    @email_body = email_body
   end
 
   def render_title
-    @template.title.gsub("{subscriber_name}", @template_variables[:subscriber_name])
+    @email_template.title.gsub("{{ subscriber_name }}", @subscriber_name)
   end
 
   def render_body
-    @template.body.gsub("{subscriber_name}", @template_variables[:subscriber_name])
-    @template.body.gsub("{email_body}", @template_variables[:email_body])
+    body = @email_template.body.gsub("{{ subscriber_name }}", @subscriber_name)
+    body = body.gsub("{{ email_body }}", @email_body)
+    puts body
+    body.html_safe
   end
 end

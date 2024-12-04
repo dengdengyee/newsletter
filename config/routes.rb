@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :news_letters, only: [ :index, :new, :create ] do
+    get :preview, on: :collection
+  end
+  resources :email_histories
   resources :subscribers
   resources :email_templates
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

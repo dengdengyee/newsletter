@@ -1,0 +1,43 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <% content_for :title, "Newsletters" %>
+
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-indigo-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Newsletters</h1>
+      <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+        View and manage your sent newsletters
+      </p>
+      
+      <div class="mt-8">
+        <%= link_to new_news_letter_path, 
+            class: "inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+          Create New Newsletter
+        <% end %>
+      </div>
+    </div>
+
+    <div id="news_letters" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <% @news_letters.each do |newsletter| %>
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="mb-4">
+            <h3 class="text-lg font-semibold text-gray-900"><%= newsletter.email_template.template_name %></h3>
+            <p class="text-sm text-gray-500">Sent <%= time_ago_in_words(newsletter.created_at) %> ago</p>
+          </div>
+          
+          <div class="prose prose-sm max-w-none mb-4">
+            <div class="bg-gray-50 rounded p-3 whitespace-pre-wrap">
+              <%= truncate(newsletter.body, length: 150) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
