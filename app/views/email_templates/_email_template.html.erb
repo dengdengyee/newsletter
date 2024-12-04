@@ -1,0 +1,16 @@
+<div id="<%= dom_id email_template %>" class="bg-white rounded-lg p-4">
+  
+  <div class="mb-6">
+    <p class="text-gray-800 text-xl font-bold whitespace-pre-wrap"><%= email_template.template_name %></p>
+  </div>
+
+  <div class="mb-6">
+    <strong class="block text-xs font-medium text-gray-400 mb-2">Email Subject</strong>
+    <p class="text-gray-800 text-base whitespace-pre-wrap bg-stone-50 p-2 rounded-md font-serif"><%= email_template.title %></p>
+  </div>
+
+  <div class="mb-6">
+    <strong class="block text-xs font-medium text-gray-400 mb-2">Body</strong>
+    <p class="text-gray-800 whitespace-pre-wrap bg-stone-50 p-2 rounded-md font-serif"><%= email_template.body %></p>
+  </div>
+</div>

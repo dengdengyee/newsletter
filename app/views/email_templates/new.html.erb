@@ -1,0 +1,18 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-extrabold text-indigo-900 sm:text-5xl sm:tracking-tight">
+        New Email Template
+      </h1>
+      <p class="mt-4 text-xl text-gray-600">
+        Create a new template for your newsletters
+      </p>
+    </div>
+
+    <%= render "form", email_template: @email_template %>
+
+    <div class="text-center mt-6">
+      <%= link_to "Back to email templates", email_templates_path, class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+    </div>
+  </div>
+</div>

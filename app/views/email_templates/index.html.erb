@@ -1,0 +1,31 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <% content_for :title, "Email templates" %>
+
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-indigo-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Email Templates</h1>
+      <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+        Manage and customize your newsletter templates
+      </p>
+      
+      <div class="mt-8">
+        <%= link_to "New email template", new_email_template_path, 
+            class: "inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+      </div>
+    </div>
+
+    <div id="email_templates" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <% @email_templates.each do |email_template| %>
+        <div class="bg-white rounded-lg shadow-sm p-4">
+          <%= render email_template %>
+          <%= link_to "View template", email_template, 
+              class: "m-4 mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

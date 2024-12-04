@@ -23,9 +23,33 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="antialiased">
+    <%# Only show navbar if we're not on the home page %>
+    <% unless current_page?(root_path) %>
+      <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-16">
+            <div class="flex">
+              <%= link_to root_path, class: "flex items-center" do %>
+                <h1 class="text-xl font-bold text-indigo-900">Newsletter Hub</h1>
+              <% end %>
+              
+              <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <%= link_to "Email Templates", email_templates_path, 
+                    class: "inline-flex items-center px-1 pt-1 border-b-2 #{current_page?(email_templates_path) ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}" %>
+                
+                <%= link_to "Subscribers", "#", 
+                    class: "inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" %>
+                
+                <%= link_to "Email History", "#", 
+                    class: "inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+
+    <%= yield %>
   </body>
 </html>

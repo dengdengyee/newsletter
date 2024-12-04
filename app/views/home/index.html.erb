@@ -1,0 +1,55 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-indigo-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+        Newsletter Hub
+      </h1>
+      <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+        Create, manage, and send beautiful newsletters to your audience with ease.
+      </p>
+      
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="text-indigo-600 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">Email Templates</h2>
+          <p class="text-gray-600 mb-4">Create and manage your newsletter templates</p>
+          <%= link_to "Manage Templates", email_templates_path, class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="text-indigo-600 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">Subscribers</h2>
+          <p class="text-gray-600 mb-4">Manage your subscriber lists and groups</p>
+          <button class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200">
+            View Lists
+          </button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="text-indigo-600 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">Email History</h2>
+          <p class="text-gray-600 mb-4">View sent emails and content previews</p>
+          <%= link_to "View History", "#", class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <p class="text-sm text-gray-500">
+          Need help getting started? Check out our <a href="#" class="text-indigo-600 hover:text-indigo-500">documentation</a> or <a href="#" class="text-indigo-600 hover:text-indigo-500">contact support</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
