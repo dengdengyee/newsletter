@@ -17,3 +17,11 @@ EmailTemplate.create(
 
 Best regards"""
 )
+
+
+5.times do |i|
+  Subscriber.create(
+    email: Faker::Internet.email,
+    name: Faker::Name.name
+  )
+end

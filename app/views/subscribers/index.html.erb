@@ -1,0 +1,29 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <% content_for :title, "Subscribers" %>
+
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-extrabold text-indigo-900 sm:text-5xl sm:tracking-tight">Subscribers</h1>
+      <p class="mt-4 text-xl text-gray-600">Manage your newsletter subscribers</p>
+    </div>
+
+    <div class="text-right mb-6">
+      <%= link_to "New subscriber", new_subscriber_path, 
+          class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+    </div>
+
+    <div id="subscribers" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <% @subscribers.each do |subscriber| %>
+        <div class="relative">
+          <%= render subscriber %>
+          <%= link_to "View details", subscriber, 
+              class: "mt-2 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
